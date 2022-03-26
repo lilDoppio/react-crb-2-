@@ -1,0 +1,25 @@
+.App {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.valute-container {
+  border: 1px solid #000;
+
+  &__header {
+    td {
+      width: 100px;
+    }
+
+    th {
+      width: 50px;
+    }
+  }
+
+  &__body {
+    tr {
+      cursor: pointer;
+    }
+  }
+}
