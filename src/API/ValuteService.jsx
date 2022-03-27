@@ -18,7 +18,7 @@ export default class ValuteService {
                 const valuteInfo = await axios.get(`https://www.cbr-xml-daily.ru/archive/2022/03/${date.getDate()}/daily_json.js`)
                 array.push(valuteInfo.data.Valute)
             } catch (e) {
-                array.push('Произошла ошибка')
+                array.push('e')
             }
         }
         return array

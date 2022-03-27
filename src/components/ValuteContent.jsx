@@ -1,25 +1,32 @@
 import React from 'react'
+import Tippy from '@tippyjs/react'
+import 'tippy.js/dist/tippy.css'
 
 export const ValuteContent = ({currentValute, chooseValute}) => {
-
-
     return (
         <tbody className='valute-container__body'>
             {Object.values(currentValute).map(valute => (
-              <tr 
+              <Tippy 
                 key={valute.CharCode}
-                onClick={() => chooseValute(valute)}
+                placement='bottom'
+                content={<span>{valute.Name}</span>}
+                className='tooltip'
+                interactive={true}
               >
-                <td>
-                  {valute.CharCode}
-                </td>
-                <td>
-                  {valute.Value}
-                </td>
-                <td>
-                  {(((valute.Value - valute.Previous) / valute.Previous) * 100).toFixed(2)}
-                </td>
-              </tr>
+                <tr 
+                  onClick={() => chooseValute(valute)}
+                >
+                  <td>
+                    {valute.CharCode}
+                  </td>
+                  <td>
+                    {valute.Value}
+                  </td>
+                  <td>
+                    {(((valute.Value - valute.Previous) / valute.Previous) * 100).toFixed(2)}
+                  </td>
+                </tr>
+              </Tippy>
             ))}
         </tbody>
     )

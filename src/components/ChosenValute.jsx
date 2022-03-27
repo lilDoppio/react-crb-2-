@@ -1,10 +1,11 @@
 import React from 'react'
+import { ChosenValuteInfo } from './ChosenValuteInfo'
 
 export const ChosenValute = ({chosenValute, previousValute}) => {
   return (
     <div>
         {chosenValute &&
-          <table>
+          <table className='valute-container chosen'>
                 <thead>
                     <tr className='valute-container__header'>
                         <td>Букв. код</td>
@@ -12,24 +13,10 @@ export const ChosenValute = ({chosenValute, previousValute}) => {
                         <th>Дата</th>
                     </tr>
                 </thead>
-                <tbody>
-                    {
-                        previousValute.map(item => (
-                            item === 'Произошла ошибка' 
-                            ? console.log('Произошла ошибка')
-                            : Object.values(item).map(item => (
-                              item.CharCode === chosenValute.CharCode 
-                              && 
-                              <tr>
-                                  <td>{item.CharCode}</td>
-                                  <td>{item.Value}</td>
-                                  <td></td>
-                              </tr>
-                            ))
-                        ))
-                    }
-                    
-                </tbody>
+                <ChosenValuteInfo
+                  chosenValute={chosenValute}
+                  previousValute={previousValute}
+                />
           </table>
         }
     </div>
