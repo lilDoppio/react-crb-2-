@@ -40,6 +40,7 @@ function App() {
         <ChosenValute 
           chosenValute={chosenValute}
           previousValute={previousValute}
+          chooseValute={getChosenValute}
         />
     </div>
   );
