@@ -9,7 +9,7 @@ export const ValuteContent = ({currentValute, chooseValute}) => {
               <Tippy 
                 key={valute.CharCode}
                 placement='bottom'
-                content={<span>{valute.Name}</span>}
+                content={valute.Name}
                 className='tooltip'
                 interactive={true}
               >
