@@ -4,28 +4,112 @@
   justify-content: center;
 }
 
-.valute-container {
+.current-valute-container {
   margin: 0 20px;
-  padding: 5px 10px;
-  font-size: 22px;
-  line-height: 30px;
-  background-color: #c4dfe6;
 
-  &__header {
-    font-weight: 700;
+  .valute-table {
+    padding: 5px 10px;
+    font-size: 22px;
+    line-height: 30px;
+    background-color: #c4dfe6;
+    cursor: default;
 
-    td {
-      width: 150px;
+    &__header {
+      font-weight: 700;
+
+      td {
+        min-width: 150px;
+      }
+
+      th {
+        min-width: 50px;
+      }
     }
 
-    th {
-      width: 50px;
+    &__body {
+      tr {
+        cursor: pointer;
+      }
     }
   }
 
-  &__body {
-    tr {
+  .cbr-link {
+    height: 35px;
+    width: 100%;
+    background-color: #c4dfe6;
+    border-bottom: 1px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      font-size: 20px;
+      font-weight: 700;
+      color: #000;
+      text-decoration: none;
+
+      &:active {
+        color: #66a5ad;
+      }
+    }
+  }
+}
+
+.previous-valute-container {
+  margin: 0 20px;
+  cursor: default;
+
+  .valute-table {
+    padding: 5px 10px;
+    font-size: 22px;
+    line-height: 30px;
+    background-color: #c4dfe6;
+    position: sticky;
+    top: 66px;
+    width: 100%;
+
+    &__header {
+      font-weight: 700;
+
+      td {
+        min-width: 150px;
+      }
+
+      th {
+        min-width: 50px;
+      }
+    }
+
+    &__body {
+      tr {
+      }
+    }
+  }
+
+  .valute-label {
+    height: 35px;
+    border-bottom: 1px solid #000;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: sticky;
+    top: 30px;
+
+    span {
+      padding: 5px 10px;
+      width: 100%;
+      font-size: 20px;
+      font-weight: 700;
+      background-color: #c4dfe6;
+    }
+
+    button {
+      border: none;
       cursor: pointer;
+
+      &:hover {
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      }
     }
   }
 }
@@ -38,54 +122,25 @@
   }
 }
 
-.valute-label {
-  margin: 0 20px;
-  border-top: 1px solid #000;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  position: sticky;
-  top: 416px;
-
-  span {
-    padding: 5px 10px;
-    width: 100%;
-    font-size: 20px;
-    background-color: #c4dfe6;
-  }
-
-  button {
-    border: none;
-    cursor: pointer;
-
-    &:hover {
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    }
-  }
-}
-
-@media (max-width: 860px) {
+@media (max-width: 954px) {
   .App {
     flex-direction: column;
   }
 
-  .valute-container {
-    width: calc(100% - 40px);
-    top: 456px;
+  .valute-table {
+    width: 100%;
   }
 
-  .chosen {
-    margin-top: 30px;
+  .previous-valute-container {
+    margin-top: 20px;
   }
 }
 
-@media (min-width: 860px) {
+@media (min-width: 954px) {
   .App {
     flex-direction: row;
   }
 
-  .chosen {
-    position: sticky;
-    top: 30px;
+  .valute-table {
   }
 }

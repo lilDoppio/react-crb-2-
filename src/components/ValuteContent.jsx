@@ -4,7 +4,7 @@ import 'tippy.js/dist/tippy.css'
 
 export const ValuteContent = ({currentValute, chooseValute}) => {
     return (
-        <tbody className='valute-container__body'>
+        <tbody className='valute-table__body'>
             {Object.values(currentValute).map(valute => (
               <Tippy 
                 key={valute.CharCode}

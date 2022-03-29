@@ -1,5 +1,4 @@
 import '../src/App.scss'
-import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { ValuteContent } from './components/ValuteContent'
 import ValuteService from './API/ValuteService'
@@ -21,12 +20,15 @@ function App() {
     setChosenValute(valute)
   }
 
-
   return (
     <div className="App">
-        <table className='valute-container'>
+      <div className='current-valute-container'>
+        <div className='cbr-link'>
+        <a href="https://www.cbr-xml-daily.ru/" target='_blank'>Курсы валют, API</a>
+        </div>
+        <table className='valute-table'>
           <thead>
-            <tr className='valute-container__header'>
+            <tr className='valute-table__header'>
               <td>Букв. код</td>
               <td>Курс</td>
               <th>%</th>
@@ -37,11 +39,12 @@ function App() {
             chooseValute={getChosenValute}
           />
         </table>
-        <ChosenValute 
-          chosenValute={chosenValute}
-          previousValute={previousValute}
-          chooseValute={getChosenValute}
-        />
+      </div>
+      <ChosenValute 
+        chosenValute={chosenValute}
+        previousValute={previousValute}
+        chooseValute={getChosenValute}
+      />
     </div>
   );
 }
