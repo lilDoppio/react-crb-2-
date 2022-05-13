@@ -1,3 +1,9 @@
+# CBR2
+
+Подгружает актаульные данные валют с сайта ЦБ, есть возможность посмотреть курс валют за сегодня и последние 10 дней.
+
+![Иллюстрация к проекту](https://github.com/lilDoppio/pics/blob/main/cbr2.png)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
